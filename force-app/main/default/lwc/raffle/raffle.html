@@ -1,0 +1,28 @@
+<!--
+  @description       : 
+  @author            : M Hamza Siddiqui
+  @group             : 
+  @last modified on  : 09-18-2021
+  @last modified by  : M Hamza Siddiqui
+
+  @last modified on  : 08-13-2022 - Changed PakDreamin22
+-->
+<template>
+    <div class="body">
+        <h1 style="font-size: 25px;text-align: center;">Raffle for the session: <b>{sessionName}</b></h1>
+        <template if:true={showWinner}>
+            <h1 style="font-size: 50px;text-align: center;">Congratulations!</h1>
+        </template>
+        <h1 class="headerNames">{headerNames}</h1>
+        <template if:true={showStartBtn}>
+            <lightning-button label="Start" class="slds-align_absolute-center slds-text-heading_large" variant="brand-outline" onclick={startRaffle}></lightning-button>
+        </template>
+
+        <template if:true={showStopBtn}>
+            <lightning-button label="Stop" class="slds-align_absolute-center slds-text-heading_large " variant="brand-outline" onclick={stopRaffle}></lightning-button>
+        </template>
+        <template if:true={showWinner}>
+            <div style="text-align: center;font-size: 25px;"><lightning-formatted-rich-text value={label.WinnerSuccess}></lightning-formatted-rich-text></div>
+        </template>
+    </div>
+</template>

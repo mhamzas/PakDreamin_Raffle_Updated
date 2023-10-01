@@ -1,0 +1,58 @@
+<!--
+  @description       : 
+  @author            : M Hamza Siddiqui
+  @group             : 
+  @last modified on  : 09-16-2021
+  @last modified by  : M Hamza Siddiqui
+-->
+<template>
+  <template if:true={showForm}>
+    <div class="slds-grid slds-gutters">
+      <div class="slds-col slds-size_2-of-7"></div>
+      <div class="slds-col slds-size_3-of-7">
+        <lightning-card title={title}>
+            <div class="slds-p-around_x-small">
+                <lightning-input label="Name" value={rec.Name} onchange={handleFieldChange} required></lightning-input>
+                <lightning-input type="email" label="Email" value={rec.Email__c} onchange={handleFieldChange} required></lightning-input>
+                <lightning-input type="email" label="Webassessor Email" value={rec.Webassessor_Email__c} onchange={handleFieldChange} required></lightning-input>
+                <lightning-input label="City" value={rec.City__c} onchange={handleFieldChange} required></lightning-input>
+                <lightning-input label="Country" value={rec.Country__c} onchange={handleFieldChange} required></lightning-input>
+                <lightning-input type="Phone" label="Phone" value={rec.Phone__c} onchange={handleFieldChange} required></lightning-input><br/>
+                <lightning-button label="Submit your Entry" class="slds-align_absolute-center" variant="brand" onclick={createParticipant}></lightning-button>
+            </div>
+            <p class="slds-card__body_inner" style="font-style: italic;"> <lightning-formatted-rich-text value={label.ParticipantEntryInfo}></lightning-formatted-rich-text></p>
+        </lightning-card>
+        </div>
+        <div class="slds-col slds-size_2-of-7"></div>
+      </div>
+  </template>
+
+  <template if:true={showSuccess}>
+    <div class="slds-grid slds-gutters">
+      <div class="slds-col slds-size_2-of-7"></div>
+      <div class="slds-col slds-size_3-of-7">
+        <lightning-card title={title}>
+          <div class="slds-card__body slds-card__body_inner"><lightning-formatted-rich-text value={label.ParticipantSuccessEntry}></lightning-formatted-rich-text></div>
+        </lightning-card>
+      </div>
+      <div class="slds-col slds-size_2-of-7"></div>
+    </div>
+  </template>
+
+  <template if:true={showError}>
+    <div class="slds-grid slds-gutters">
+        <div class="slds-col slds-size_2-of-7"></div>
+        <div class="slds-col slds-size_3-of-7">
+          <lightning-card title={title}>
+            <div class="slds-card__body slds-card__body_inner"><lightning-formatted-rich-text value={label.ParticipantErrorEntry}></lightning-formatted-rich-text></br>{response}</div>
+          </lightning-card>
+        </div>
+        <div class="slds-col slds-size_2-of-7"></div>
+    </div>
+  </template>
+
+  <template if:true={showRaffle}>
+    <c-raffle session-id={sessionId}></c-raffle>
+  </template>
+
+</template> <!-- End of File-->

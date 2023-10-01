@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>SwagVoucher__c</fullName>
+    <externalId>false</externalId>
+    <label>Swag/Voucher?</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Swag</fullName>
+                <default>true</default>
+                <label>Random Swag</label>
+            </value>
+            <value>
+                <fullName>PakDreamin T-shirt</fullName>
+                <default>false</default>
+                <label>PakDreamin T-shirt</label>
+            </value>
+            <value>
+                <fullName>$400 worth SF Cert Voucher</fullName>
+                <default>false</default>
+                <label>$400 worth SF Cert Voucher</label>
+            </value>
+            <value>
+                <fullName>Pack of Stickers</fullName>
+                <default>false</default>
+                <label>Pack of Stickers</label>
+            </value>
+            <value>
+                <fullName>Pack of Badges</fullName>
+                <default>false</default>
+                <label>Pack of Badges</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

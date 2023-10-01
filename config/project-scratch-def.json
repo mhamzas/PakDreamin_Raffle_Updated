@@ -1,0 +1,19 @@
+{
+  "orgName": "hamza company",
+  "edition": "Developer",
+  "features": ["EnableSetPasswordInApi", "Communities","PartnerCommunity","CustomerCommunityPlusLogin","PersonAccounts"],
+    "settings": {
+            "lightningExperienceSettings": {
+                    "enableS1DesktopEnabled": true
+            },
+            "mobileSettings": {
+                    "enableS1EncryptedStoragePref2": false
+            },
+            "communitiesSettings": {
+                    "enableNetworksEnabled": true
+            },
+            "experienceBundleSettings": {
+                    "enableExperienceBundleMetadata": true
+            }
+    }
+}

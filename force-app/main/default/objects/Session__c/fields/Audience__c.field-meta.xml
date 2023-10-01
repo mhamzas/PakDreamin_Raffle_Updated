@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Audience__c</fullName>
+    <externalId>false</externalId>
+    <label>Audience</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>All</fullName>
+                <default>false</default>
+                <label>All</label>
+            </value>
+            <value>
+                <fullName>Newbies
+Admin
+Architect</fullName>
+                <default>false</default>
+                <label>Newbies
+Admin
+Architect</label>
+            </value>
+            <value>
+                <fullName>Newbies
+Admin
+Developers
+Architec</fullName>
+                <default>false</default>
+                <label>Newbies
+Admin
+Developers
+Architec</label>
+            </value>
+            <value>
+                <fullName>Admin
+Developers</fullName>
+                <default>false</default>
+                <label>Admin
+Developers</label>
+            </value>
+            <value>
+                <fullName>Admin</fullName>
+                <default>false</default>
+                <label>Admin</label>
+            </value>
+            <value>
+                <fullName>Newbies
+Admin
+Developers</fullName>
+                <default>false</default>
+                <label>Newbies
+Admin
+Developers</label>
+            </value>
+            <value>
+                <fullName>Newbies
+Admin</fullName>
+                <default>false</default>
+                <label>Newbies
+Admin</label>
+            </value>
+            <value>
+                <fullName>Speakers
+Moderators</fullName>
+                <default>false</default>
+                <label>Speakers
+Moderators</label>
+            </value>
+            <value>
+                <fullName>Developers
+Architect</fullName>
+                <default>false</default>
+                <label>Developers
+Architect</label>
+            </value>
+            <value>
+                <fullName>Newbies</fullName>
+                <default>false</default>
+                <label>Newbies</label>
+            </value>
+            <value>
+                <fullName>Newbies
+Admin
+Developers
+Architect</fullName>
+                <default>false</default>
+                <label>Newbies
+Admin
+Developers
+Architect</label>
+            </value>
+            <value>
+                <fullName>Architect</fullName>
+                <default>false</default>
+                <label>Architect</label>
+            </value>
+            <value>
+                <fullName>Developers</fullName>
+                <default>false</default>
+                <label>Developers</label>
+            </value>
+            <value>
+                <fullName>Admin
+Developers
+Architect</fullName>
+                <default>false</default>
+                <label>Admin
+Developers
+Architect</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

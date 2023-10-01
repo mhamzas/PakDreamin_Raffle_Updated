@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X2023_Sessions</fullName>
+    <columns>NAME</columns>
+    <columns>Start_Time__c</columns>
+    <columns>End_Time__c</columns>
+    <columns>Recorded_Session__c</columns>
+    <columns>Priority__c</columns>
+    <columns>Moderator_Url__c</columns>
+    <columns>Email__c</columns>
+    <columns>Duration__c</columns>
+    <columns>Duration_Hours__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Event__c</field>
+        <operation>equals</operation>
+        <value>PakDreamin&apos;23</value>
+    </filters>
+    <label>2023 Sessions</label>
+</ListView>

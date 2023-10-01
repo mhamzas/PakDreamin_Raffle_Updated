@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>EventUrl</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>EventUrl</shortDescription>
+        <value>http://www.pakdreamin.com/raffle</value>
+    </labels>
+    <labels>
+        <fullName>ParticipantEntryInfo</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ParticipantEntryInfo</shortDescription>
+        <value>The Webassessor Email should be valid. &lt;/br&gt;The certification voucher will only be applicable on this email and void if invalid.</value>
+    </labels>
+    <labels>
+        <fullName>ParticipantErrorEntry</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ParticipantErrorEntry</shortDescription>
+        <value>Sorry - Either Session hasn&apos;t started or Entry is closed for the Raffle!</value>
+    </labels>
+    <labels>
+        <fullName>ParticipantSuccessEntry</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>ParticipantSuccessEntry</shortDescription>
+        <value>Thank you! - Your entry has been submitted. Good Luck!</value>
+    </labels>
+    <labels>
+        <fullName>Winner_Success</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Winner_Success</shortDescription>
+        <value>Please visit the Swag Collection Booth to redeem your prize. Also, remember to attend the other sessions. 
+
+&lt;/br&gt;Share a screenshot on social media using the hashtag #PakDreamin2023. Happy learning!</value>
+    </labels>
+</CustomLabels>
