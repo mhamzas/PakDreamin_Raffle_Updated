@@ -155,16 +155,16 @@
     </layoutSections>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Name__c</fields>
         <fields>Participant__c</fields>
+        <fields>Item__c</fields>
         <relatedList>Winners__c.Session__c</relatedList>
     </relatedLists>
     <relatedLists>
         <fields>NAME</fields>
+        <fields>Account__c</fields>
         <fields>Phone__c</fields>
-        <fields>Email__c</fields>
         <fields>Webassessor_Email__c</fields>
-        <fields>City__c</fields>
-        <fields>Country__c</fields>
         <relatedList>Participant__c.Session__c</relatedList>
     </relatedLists>
     <relatedLists>

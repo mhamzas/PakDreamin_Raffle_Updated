@@ -1,12 +1,11 @@
 import { LightningElement,api, wire } from 'lwc';
-import newParticipant from '@salesforce/apex/raffleHandler.createRecord';
+import createParticipant from '@salesforce/apex/raffleHandler.createParticipant';
 import getSession from '@salesforce/apex/raffleHandler.getSession';
 import getRecordTypeIdForObject from '@salesforce/apex/raffleHandler.getRecordTypeIdForObject';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 import ParticipantSuccessEntry from '@salesforce/label/c.ParticipantSuccessEntry';
 import ParticipantErrorEntry from '@salesforce/label/c.ParticipantErrorEntry';
 import ParticipantEntryInfo from '@salesforce/label/c.ParticipantEntryInfo';
-
 
 
 export default class RaffleHome extends LightningElement {
@@ -39,6 +38,8 @@ export default class RaffleHome extends LightningElement {
         City__c: '',
         Country__c: ''
     };
+
+    recParticipants = [];
 
     @wire(getSession, {sessionKey: '$sessionKey'})
     wiredSession({error, data}) {
@@ -120,42 +121,7 @@ export default class RaffleHome extends LightningElement {
         this.rec.Session__c = this.sessionData.Id;
 		//console.log(this.rec);
 
-        let accData = this.createAccount(event);
-        this.rec.ExternalId__c = this.sessionData.Id+'|'+this.rec.Email__c;
-        this.rec.AccountId__c = accData.Id;
-        newParticipant({data:this.rec})
-        .then(result =>{
-            this.message = result;
-                this.error = undefined;
-                if(this.message !== undefined) {
-										this.showForm = false;
-                    this.dispatchEvent(
-                        new ShowToastEvent({
-                            title: 'Success',
-                            message: 'You have successfully registered!',
-                            variant: 'success',
-                        }),
-                    );
-                }
-                this.showForm=false;
-                this.showSuccess=true;
-                console.log(JSON.stringify(result));
-                console.log("result", this.message);
-                
-        })
-        .catch(error=>{
-            this.message = undefined;
-            this.error = error;
-            this.response = error.body.message;
-            this.dispatchEvent(
-                new ShowToastEvent({
-                    title: 'HHmm.. that did not work!',
-                    message: error.body.message,
-                    variant: 'error',
-                }),
-            );
-            console.log("error", JSON.stringify(this.error));
-        });
+        this.createAccount(event);
     }
 
     createAccount(event){
@@ -188,32 +154,51 @@ export default class RaffleHome extends LightningElement {
                 PersonMailingCity: this.rec.City__c,
                 PersonMailingCountry: this.rec.Country__c,
                 RecordTypeId: recTypeResult
-
             };
 
-            // Creating new Account record.
-            newParticipant({data:accRec})
+            let recAccounts = [];
+            recAccounts.push(accRec);
+
+            // Creating new Participant record.
+            createParticipant({data:recAccounts, sessionId: this.rec.Session__c, scan:false})
             .then(result =>{
                 this.message = result;
-                accRecData = result;
                 this.error = undefined;
-                console.log('result Acc:'+ JSON.stringify(result));
+                if(this.message !== undefined) {
+										this.showForm = false;
+                    this.dispatchEvent(
+                        new ShowToastEvent({
+                            title: 'Success',
+                            message: 'You have successfully registered!',
+                            variant: 'success',
+                        }),
+                    );
+                }
+                this.showForm=false;
+                this.showSuccess=true;
+                console.log(JSON.stringify(result));
+                console.log("result", this.message);
             })
             .catch(error=>{
                 this.message = undefined;
                 this.error = error;
-                //this.response = error.body.message;
+                this.response = error.body.message;
+                this.dispatchEvent(
+                    new ShowToastEvent({
+                        title: 'HHmm.. that did not work!',
+                        message: error.body.message,
+                        variant: 'error',
+                    }),
+                );
                 console.log("error", JSON.stringify(this.error));
             });
         })
         .catch(error=>{
             this.message = undefined;
             this.error = error;
-            //this.response = error.body.message;
             console.log("error", JSON.stringify(this.error));
         });
 
-        return accRecData;
     }
 
     msToTime(s){

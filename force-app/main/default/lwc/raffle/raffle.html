@@ -14,6 +14,10 @@
             <h1 style="font-size: 50px;text-align: center;">Congratulations!</h1>
         </template>
         <h1 class="headerNames">{headerNames}</h1>
+
+        <template if:true={showWinner}>
+            <h3 style="font-size: 40px;text-align: center;"> You have won a <b>{item}</b>! </h3>
+        </template>
         <template if:true={showStartBtn}>
             <lightning-button label="Start" class="slds-align_absolute-center slds-text-heading_large" variant="brand-outline" onclick={startRaffle}></lightning-button>
         </template>

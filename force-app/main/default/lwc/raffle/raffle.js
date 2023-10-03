@@ -14,35 +14,37 @@ export default class Raffle extends LightningElement {
     winners=[];
     winnerEmails = [];
     participants={};
+    participantsAcc={};
     //partEmails = {};
     intervalHandle = null;
     showTimer = true;
     showStartBtn = false;
     showStopBtn = false;
     showWinner= false;
-
+    item = '';
     label = {
         WinnerSuccess
     };
 
     rec = {
         sobjectType: 'Winners__c',
-        Name : '',
         Session__c: '',
-        Participant__c: ''
+        Participant__c: '',
+        Account__c: ''
     };
 
     @wire(getParticipants, {sessionId: '$sessionId'})
     wiredParticipants({error, data}) {
         if (data) {
             // console.log(this.sessionId);
-			// console.log('Participants: ' + JSON.stringify(data));
+			 console.log('Participants: ' + JSON.stringify(data));
             this.sessionName = data[0].Session__r.Schedule_name__c;
+            this.item = data[0].Session__r.SwagVoucher__c;
 
             // Getting all the Winners to compare with the namesList
             getWinners().then(result =>{
                 this.winners = result;
-                //console.log('Winners'+JSON.stringify(result));
+                console.log('Winners'+JSON.stringify(result));
                 // Winner Emails
                 for(let i = 0; i < result.length; i++) {
                     this.winnerEmails.push(result[i].Participant__r.Webassessor_Email__c);
@@ -52,16 +54,18 @@ export default class Raffle extends LightningElement {
                 console.log("error", JSON.stringify(error));
             });
 
-            ///console.log('WinnerNames ::'+ JSON.stringify(this.winnerEmails));
+            console.log('WinnerNames ::'+ JSON.stringify(this.winnerEmails));
             //Looping on all the participants
             for(let i = 0; i < data.length; i++) {
                 // Populating Object/Map for Participants against their Name
-                this.participants[data[i].Name] = data[i].Id; 
+                this.participants[data[i].Account__r.Name] = data[i].Id; 
+                // Populating Object/Map for Participants against their AccountId
+                this.participantsAcc[data[i].Account__r.Name] = data[i].Account__c; 
                 //this.partEmails[data[i].Webassessor_Email__c] = data[i].Id;
                 //console.log('this.winnerEmails.indexOf('+data[i].Webassessor_Email__c+')='+this.winnerEmails.indexOf(data[i].Webassessor_Email__c))
                 // // Checking if this.winners doesn't contain this.partEmails
                 if(this.winnerEmails.indexOf(data[i].Webassessor_Email__c) === -1) {
-                    this.namesList.push(data[i].Name);
+                    this.namesList.push(data[i].Account__r.Name);
                 }
 
                 // // Checking if participant is already in the winners list
@@ -72,7 +76,7 @@ export default class Raffle extends LightningElement {
                 // }
             }
             this.showStartBtn=true;
-            //console.log('Eligible Names'+JSON.stringify(this.namesList));
+            console.log('Eligible Names'+JSON.stringify(this.namesList));
         } else if (error) {
             console.log('error: ' + JSON.stringify(error));
             this.showStartBtn = false;
@@ -83,14 +87,23 @@ export default class Raffle extends LightningElement {
         }
     }
 
-    startRaffle(event) {
+    startRaffleHandler(event) {
         let i = 0;
         this.showStartBtn = false;
-        this.showStopBtn = true;
+        this.showStopBtn = false;
         this.intervalHandle = setInterval(function () {
             this.headerNames = this.namesList[i++ % this.namesList.length];
         }.bind(this), 50); //https://omkardeokar95.medium.com/how-setinterval-is-bad-and-a-way-to-make-your-life-better-in-lwc-salesforce-8c0b2fc082da
     }
+
+    startRaffle(event) {
+        this.startRaffleHandler(event);
+
+        setTimeout(() => {
+            this.stopRaffle(event);
+            },6000);
+    }
+
     stopRaffle(event) {
         this.showStartBtn = false;
         this.showStopBtn = false;
@@ -101,7 +114,9 @@ export default class Raffle extends LightningElement {
         let winnerName = this.headerNames;
         // Getting Participant Id
         let participantId = this.participants[winnerName];
+        let participantAccId = this.participantsAcc[winnerName];
         this.rec.Participant__c=participantId;
+        this.rec.Account__c = participantAccId;
         this.rec.Name=winnerName;
         this.rec.Session__c=this.sessionId;
         console.log(JSON.stringify(this.rec));

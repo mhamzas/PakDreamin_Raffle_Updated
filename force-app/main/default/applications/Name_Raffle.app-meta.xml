@@ -13,12 +13,17 @@
     <label>Name Raffle</label>
     <navType>Console</navType>
     <tabs>Session__c</tabs>
+    <tabs>Shop_Scan</tabs>
+    <tabs>Attendee_Scanner</tabs>
     <tabs>Participant__c</tabs>
     <tabs>Winners__c</tabs>
     <tabs>Event__c</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Name_Raffle_UtilityBar</utilityBar>
     <workspaceConfig>
+        <mappings>
+            <tab>Attendee_Scanner</tab>
+        </mappings>
         <mappings>
             <tab>Event__c</tab>
         </mappings>
@@ -28,6 +33,9 @@
         </mappings>
         <mappings>
             <tab>Session__c</tab>
+        </mappings>
+        <mappings>
+            <tab>Shop_Scan</tab>
         </mappings>
         <mappings>
             <fieldName>Participant__c</fieldName>

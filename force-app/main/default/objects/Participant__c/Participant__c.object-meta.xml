@@ -156,9 +156,10 @@
     <externalSharingModel>ControlledByParent</externalSharingModel>
     <label>Participant</label>
     <nameField>
-        <label>Participant Name</label>
+        <displayFormat>Participant-{0000}</displayFormat>
+        <label>Participant</label>
         <trackHistory>false</trackHistory>
-        <type>Text</type>
+        <type>AutoNumber</type>
     </nameField>
     <pluralLabel>Participants</pluralLabel>
     <searchLayouts></searchLayouts>

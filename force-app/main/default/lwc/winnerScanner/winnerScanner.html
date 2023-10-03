@@ -1,13 +1,13 @@
 <!-- barcodeScannerMultiScan.html -->
   <template>
     <div class="slds-text-align_center">
-      <span class="slds-text-heading_large">Attendee Scanner: Multi-Scan</span>
+      <span class="slds-text-heading_large">Winner Scanner</span>
     </div>
    
    <!-- Static help text -->
   <div class="slds-text-color_weak slds-m-vertical_large slds-m-horizontal_medium">
     <p>Tap <strong>Start a Scanning Session</strong> to open a barcode scanner camera view. Position barcodes in the scanner view to scan them.</p>
-    <p>Continue scanning items. </br>Tap Done when you are done scanning.</p>
+    <p>Scanning the Attendee Badge and Tap Done when you are done scanning.</p>
   </div>
    
    <!-- Scan button, always enabled -->
@@ -21,30 +21,13 @@
      onclick={beginScanning}
     ></lightning-button>
   </div>
-
-  <!-- After barcodes are scanned, their counts are displayed here: -->
-    <template lwc:if={sessionId}>
-      <div class="slds-var-m-vertical_large slds-var-p-vertical_medium slds-border_top slds-border_bottom">
-        <p>SessionID <b>Success!</b>!</p>
-      </div>
-    </template>
    
    <!-- After barcodes are scanned, their values are displayed here: -->
-    <!--<template lwc:if={scannedBarcodes}>
+    <template lwc:if={scannedBarcodes}>
       <div class="slds-var-m-vertical_large slds-var-p-vertical_medium slds-border_top slds-border_bottom">
-        <p>Scanned barcode values are:</p>
+        <p>Attendee ID is:</p>
         <pre>{scannedBarcodesAsString}</pre>
-      </div>
-    </template>-->
-
-    <!-- After barcodes are scanned, their values are displayed here: -->
-    <template lwc:if={outputdebug}>
-      <div class="slds-var-m-vertical_large slds-var-p-vertical_medium slds-border_top slds-border_bottom">
-        <p>Debug Outputs:</p>
-        <pre>{outputdebug}</pre>
+        <p> Now please click NEXT to see the his/her prizes.</p>
       </div>
     </template>
-
-
-    
   </template>

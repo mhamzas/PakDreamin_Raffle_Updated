@@ -9,5 +9,6 @@
     <fields>End_Time__c</fields>
     <fields>Email__c</fields>
     <fields>Preferred_Times__c</fields>
+    <fields>SwagVoucher__c</fields>
     <label>Custom Compact Layout</label>
 </CompactLayout>
