@@ -10,3 +10,11 @@ package.xml
 
 # LWC Jest
 **/__tests__/**
+
+force-app/main/default/reports
+force-app/main/default/dashboards
+force-app/main/default/audience
+force-app/main/default/appMenus/AppSwitcher.appMenu-meta.xml
+force-app/main/default/pages
+force-app/main/default/aura
+force-app/main/default/components

@@ -1,5 +1,5 @@
 {
-  "orgName": "hamza company",
+  "orgName": "DreaminEvent",
   "edition": "Developer",
   "features": ["EnableSetPasswordInApi", "Communities","PartnerCommunity","CustomerCommunityPlusLogin","PersonAccounts"],
     "settings": {

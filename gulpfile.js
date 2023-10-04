@@ -132,6 +132,27 @@ function pushSource() {
     return run('sfdx force:source:push' + (force ? ' -f' : ''), { verbosity: 3 }).exec([], outputResults);
 }
 
+function createCommunity() {
+    let force = process.argv.indexOf('--force') !== -1;
+    //let name = process.argv[process.argv.indexOf('-n') + 1];
+    //let templatename = 'Customer Service';
+
+    return run("sfdx force:community:create --name 'PakDreamin_Raffle' --template-name 'Help Center' -p ''" + (force ? " -f" : ""), { verbosity: 3 }).exec([], outputResults);
+}
+
+function publishCommunity() {
+    let force = process.argv.indexOf('--force') !== -1;
+
+    return run("sf community publish --name 'PakDreamin_Raffle'" + (force ? " -f" : ""), { verbosity: 3 }).exec([], outputResults);
+}
+
+function assignPermission() {
+    let force = process.argv.indexOf('--force') !== -1;
+
+    return run("sfdx force:user:permset:assign --permsetname Name_Raffle" + (force ? " -f" : ""), { verbosity: 3 }).exec([], outputResults);
+}
+
+
 function pullSource() {
     let force = process.argv.indexOf('--force') !== -1;
     
@@ -165,12 +186,15 @@ Object.assign(exports, {
     'delete': deleteOrg,
     'password': generatePassword,
     'open': openOrg,
+    'permission' : assignPermission,
     'install': installPackage,
     'component': createComponent,
     'push': pushSource,
+    'community' : createCommunity,
+    'publish' : publishCommunity,
     'pull': pullSource,
     'serve': startServer,
     'watch': initWatch,
     'watch:sass': initWatchSass,
-    'default': series(compileSass, pushSource, initWatch)
+    'default': series(compileSass, createOrg, createCommunity, pushSource, initWatch, publishCommunity,assignPermission)
 });
