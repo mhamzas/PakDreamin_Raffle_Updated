@@ -74,4 +74,34 @@ public class raffleHandlerTest {
     static testMethod void customException(){
         raffleHandler.createCustomException('Winner');
     }
+    
+    static testMethod void createParticipantTest1(){
+        // Create a test record
+        Session__c testSession = new Session__c();
+        insert testSession;
+        List<sObject> data = new List<sObject>();
+        Account acc = new Account();
+        acc.FirstName = 'Test';
+        acc.LastName = 'Acc';
+        acc.RecordTypeId = raffleHandler.getRecordTypeIdForObject('Account','Person Account');
+        acc.PersonEmail = 'testacc@gmail.com';
+        acc.Webassessor_Email__c = 'testacc@gmail.com';
+        data.add(acc);
+        raffleHandler.createParticipant(data,testSession.ID,true);
+    }
+    
+    static testMethod void createParticipantTest2(){
+        // Create a test record
+        Session__c testSession = new Session__c();
+        insert testSession;
+        List<sObject> data = new List<sObject>();
+        Account acc = new Account();
+        acc.FirstName = 'Test';
+        acc.LastName = 'Acc';
+        acc.RecordTypeId = raffleHandler.getAccRecordTypeId('Person Account');
+        acc.PersonEmail = 'testacc@gmail.com';
+        acc.Webassessor_Email__c = 'testacc@gmail.com';
+        data.add(acc);
+        raffleHandler.createParticipant(data,testSession.ID,false);
+    }
 }
