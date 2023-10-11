@@ -49,8 +49,8 @@ export default class RaffleHome extends LightningElement {
             this.sessionId = this.sessionData.Id;
             this.title='Participate for the Raffle - '+this.sessionData.Schedule_name__c;
             // Making sure the authCode is valid
-            console.log(this.authCode+' && '+this.authCode.trim()+'==='+this.sessionData.AuthCode__c);
-            console.log(typeof(this.authCode)+' && '+typeof(this.authCode)+'==='+typeof(this.sessionData.AuthCode__c));
+            //console.log(this.authCode+' && '+this.authCode.trim()+'==='+this.sessionData.AuthCode__c);
+            //console.log(typeof(this.authCode)+' && '+typeof(this.authCode)+'==='+typeof(this.sessionData.AuthCode__c));
             if(this.authCode && this.authCode.trim() === this.sessionData.AuthCode__c.trim()){
                 console.log("authCodeValid1");
                 this.authCodeValid = true;

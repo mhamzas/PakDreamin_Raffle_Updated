@@ -88,7 +88,7 @@ function authOrg() {
 }
 
 function createOrg() {
-    return run('sfdx force:org:create -s -f config/project-scratch-def.json -d 30 -a "' + config.orgName + '"').exec([], outputResults);
+    return run('sfdx force:org:create -s -f config/project-scratch-def.json -d 30 -a "' + config.orgName + new Date().toLocaleTimeString() + '"').exec([], outputResults);
 }
 
 function deleteOrg() {
@@ -130,6 +130,10 @@ function pushSource() {
     let force = process.argv.indexOf('--force') !== -1;
     
     return run('sfdx force:source:push' + (force ? ' -f' : ''), { verbosity: 3 }).exec([], outputResults);
+}
+
+function pushSourceForce() {
+    return run('sfdx force:source:push -f', { verbosity: 3 }).exec([], outputResults);
 }
 
 function createCommunity() {
@@ -190,11 +194,13 @@ Object.assign(exports, {
     'install': installPackage,
     'component': createComponent,
     'push': pushSource,
+    'pushforce' : pushSourceForce,
     'community' : createCommunity,
     'publish' : publishCommunity,
     'pull': pullSource,
     'serve': startServer,
     'watch': initWatch,
     'watch:sass': initWatchSass,
-    'default': series(compileSass, createOrg, createCommunity, pushSource, initWatch, publishCommunity,assignPermission)
+    'default': series(compileSass, createOrg, pushSourceForce, publishCommunity,assignPermission,initWatch),
+    'pushfailed' : series(pushSourceForce,publishCommunity,assignPermission,initWatch)
 });

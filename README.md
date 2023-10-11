@@ -1,18 +1,39 @@
-# Salesforce DX Project: Next Steps
+This app initially built for Pakistan Dreamin' 2021.
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+<a href="https://githubsfdeploy.herokuapp.com">
+  <img alt="Deploy to Salesforce"
+       src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
+</a>
 
-## How Do You Plan to Deploy Your Changes?
+You can preview the app using the url: https://hosted-scratch.herokuapp.com/launch?template=https://github.com/mhamzas/Name-Raffle-SF
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+Please feel free to contribute and use in your projects.
 
-## Configure Your Salesforce DX Project
+Installation Steps, 
+1. Create Public Experience Site (Community)
+2. Drag n Drop the raffleHome LWC Component
+3. Use {!session} and {!authCode} values for the component attributes (Which will be collected through QueryString)
+4. Update Community Site url to the Custom Label
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+Usage,
+1. Use the Urls generated on the Session record.
+2. Moderator URL will allow RUN Raffle Button and Registration URL is for Public to Participate.
+3. Participation and Raffle will run on the Session Date/Time only.
+4. Once Winner is selected for any session, will be skipped for future Raffles.
 
-## Read All About It
+#Update
+Use the SF mobile app to scan the QR Code.
+1. Upload Attendees as Person Accounts.
+2. Use Google API to generate QR Code of Account Ids and use it on the QR Code Scanner.
+3. Once scanned, the user will be added to the selected session as a participant.
+4. Use the Moderated URL to run the raffle.
+5. On the community WINNERS page, audience can see who won what.
+6. Use se SHOP Scanner (on the mobile app) to mark the winner item CLAIMED.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+#Pre-Requisite.
+```
+npm install -g gulp-cli
+npm install --save-dev gulp sass gulp-sass gulp-beautify-code gulp-autoprefixer gulp-run
+sfdx plugins:install @salesforce/lwc-dev-server
+sfdx plugins:update
+```
