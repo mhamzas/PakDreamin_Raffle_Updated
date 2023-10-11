@@ -2,7 +2,7 @@
 <ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
     <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
     <language>en_US</language>
-    <masterLabel>PakDreamin23_Banner</masterLabel>
+    <masterLabel>logodark7e16210802183961</masterLabel>
     <originNetwork>PakDreamin_Raffle</originNetwork>
     <relationships>
         <network>
@@ -18,7 +18,7 @@
     <versions>
         <version>
             <number>1</number>
-            <pathOnClient>PakDreamin&apos;23 Banner.png</pathOnClient>
+            <pathOnClient>logo-dark-7-e1621080218396.png</pathOnClient>
         </version>
     </versions>
 </ContentAsset>

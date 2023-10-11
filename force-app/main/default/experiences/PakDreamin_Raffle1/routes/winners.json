@@ -1,0 +1,10 @@
+{
+  "activeViewId" : "35a5cb54-49b6-4b47-be4b-180ad542d0ae",
+  "appPageId" : "712f027a-e850-4701-bb9a-b39d9302176a",
+  "configurationTags" : [ ],
+  "id" : "82dde70e-26ec-480c-ab67-64e844c75a08",
+  "label" : "Winners",
+  "routeType" : "custom-winners",
+  "type" : "route",
+  "urlPrefix" : "winners"
+}

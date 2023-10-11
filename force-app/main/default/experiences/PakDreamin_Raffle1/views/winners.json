@@ -1,0 +1,80 @@
+{
+  "appPageId" : "712f027a-e850-4701-bb9a-b39d9302176a",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "35a5cb54-49b6-4b47-be4b-180ad542d0ae",
+  "label" : "Winners",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "0db42e6e-edfd-4eda-a7a8-c11b343ee4f0",
+          "columns" : [ {
+            "UUID" : "19726b45-5ea8-418d-b036-c1addae79ac3",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "0db42e6e-edfd-4eda-a7a8-c11b343ee4f0",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<h1> Winners </h1>"
+          },
+          "componentName" : "forceCommunity:htmlBlock",
+          "id" : "29a9422d-3f48-466c-bfe6-ceaa0ff10a8b",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "flowArguments" : "",
+            "flowName" : "Winners_Screen"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "84e85322-e703-47cf-aaa1-4ce3cce870e1",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "19726b45-5ea8-418d-b036-c1addae79ac3",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "1beeefe0-0cc8-4d45-87aa-9a1d8aec5f00",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Winners"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "e0707e03-d157-4210-903c-9a9071850275",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "1c5290ce-6231-4a53-9456-41167350d697",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-winners"
+}

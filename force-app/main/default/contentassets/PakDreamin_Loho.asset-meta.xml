@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentAsset xmlns="http://soap.sforce.com/2006/04/metadata">
-    <isVisibleByExternalUsers>true</isVisibleByExternalUsers>
+    <isVisibleByExternalUsers>false</isVisibleByExternalUsers>
     <language>en_US</language>
-    <masterLabel>PakDreamin23_Banner</masterLabel>
+    <masterLabel>PakDreamin_Loho</masterLabel>
     <originNetwork>PakDreamin_Raffle</originNetwork>
     <relationships>
         <network>
@@ -18,7 +18,7 @@
     <versions>
         <version>
             <number>1</number>
-            <pathOnClient>PakDreamin&apos;23 Banner.png</pathOnClient>
+            <pathOnClient>PakDreamin Loho.png</pathOnClient>
         </version>
     </versions>
 </ContentAsset>

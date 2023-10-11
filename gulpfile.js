@@ -201,6 +201,7 @@ Object.assign(exports, {
     'serve': startServer,
     'watch': initWatch,
     'watch:sass': initWatchSass,
-    'default': series(compileSass, createOrg, pushSourceForce, publishCommunity,assignPermission,initWatch),
-    'pushfailed' : series(pushSourceForce,publishCommunity,assignPermission,initWatch)
+    'default': series(compileSass, createOrg, pushSourceForce,assignPermission,initWatch),
+    'default2': series(compileSass, createOrg, createCommunity, pushSourceForce, publishCommunity,assignPermission,initWatch),
+    'pushfailed' : series(pushSourceForce, publishCommunity,assignPermission,initWatch)
 });
