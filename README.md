@@ -5,7 +5,7 @@ This app initially built for Pakistan Dreamin' 2021.
        src="https://raw.githubusercontent.com/afawcett/githubsfdeploy/master/deploy.png">
 </a>
 
-You can preview the app using the url: https://hosted-scratch.herokuapp.com/launch?template=https://github.com/mhamzas/Name-Raffle-SF
+You can preview the app using the url: https://hosted-scratch.herokuapp.com/launch?template=https://github.com/mhamzas/PakDreamin_Raffle_Updated
 
 Please feel free to contribute and use in your projects.
 
@@ -21,7 +21,7 @@ Usage,
 3. Participation and Raffle will run on the Session Date/Time only.
 4. Once Winner is selected for any session, will be skipped for future Raffles.
 
-#Update
+# Update
 Use the SF mobile app to scan the QR Code.
 1. Upload Attendees as Person Accounts.
 2. Use Google API to generate QR Code of Account Ids and use it on the QR Code Scanner.
@@ -30,7 +30,7 @@ Use the SF mobile app to scan the QR Code.
 5. On the community WINNERS page, audience can see who won what.
 6. Use se SHOP Scanner (on the mobile app) to mark the winner item CLAIMED.
 
-#Pre-Requisite.
+# Pre-Requisite.
 ```
 npm install -g gulp-cli
 npm install --save-dev gulp sass gulp-sass gulp-beautify-code gulp-autoprefixer gulp-run
