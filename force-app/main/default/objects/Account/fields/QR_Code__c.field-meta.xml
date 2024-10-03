@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>QR_Code__c</fullName>
+    <description>Attendee QR Code</description>
+    <externalId>false</externalId>
+    <formula>IMAGE(&apos;https://quickchart.io/qr?size=200&amp;text=&apos;+Id ,&apos;Scan QR code from mobile.&apos;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Attendee QR Code</inlineHelpText>
+    <label>QR Code</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

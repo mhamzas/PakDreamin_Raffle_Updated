@@ -5,7 +5,7 @@
         <language>en_US</language>
         <protected>true</protected>
         <shortDescription>EventUrl</shortDescription>
-        <value>http://www.pakdreamin.com/raffle</value>
+        <value>https://www.pakdreamin.com/raffle</value>
     </labels>
     <labels>
         <fullName>ParticipantEntryInfo</fullName>
@@ -35,6 +35,6 @@
         <shortDescription>Winner_Success</shortDescription>
         <value>Please visit the Swag Collection Booth to redeem your prize. Also, remember to attend the other sessions. 
 
-&lt;/br&gt;Share a screenshot on social media using the hashtag #PakDreamin2023. Happy learning!</value>
+&lt;/br&gt;Share a screenshot on social media using the hashtag #PakDreamin2024. Happy learning!</value>
     </labels>
 </CustomLabels>

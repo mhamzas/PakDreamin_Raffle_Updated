@@ -18,11 +18,16 @@
     <tabs>Participant__c</tabs>
     <tabs>Winners__c</tabs>
     <tabs>Event__c</tabs>
+    <tabs>Sponsor_Lead__c</tabs>
+    <tabs>Badges_Generate</tabs>
     <uiType>Lightning</uiType>
     <utilityBar>Name_Raffle_UtilityBar</utilityBar>
     <workspaceConfig>
         <mappings>
             <tab>Attendee_Scanner</tab>
+        </mappings>
+        <mappings>
+            <tab>Badges_Generate</tab>
         </mappings>
         <mappings>
             <tab>Event__c</tab>
@@ -36,6 +41,9 @@
         </mappings>
         <mappings>
             <tab>Shop_Scan</tab>
+        </mappings>
+        <mappings>
+            <tab>Sponsor_Lead__c</tab>
         </mappings>
         <mappings>
             <fieldName>Participant__c</fieldName>

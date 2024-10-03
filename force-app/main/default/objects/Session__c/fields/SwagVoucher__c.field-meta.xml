@@ -10,29 +10,24 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Swag</fullName>
-                <default>true</default>
-                <label>Random Swag</label>
-            </value>
-            <value>
-                <fullName>PakDreamin T-shirt</fullName>
-                <default>false</default>
-                <label>PakDreamin T-shirt</label>
-            </value>
-            <value>
                 <fullName>$400 worth SF Cert Voucher</fullName>
                 <default>false</default>
                 <label>$400 worth SF Cert Voucher</label>
             </value>
             <value>
-                <fullName>Pack of Stickers</fullName>
+                <fullName>Laptop Bag</fullName>
                 <default>false</default>
-                <label>Pack of Stickers</label>
+                <label>Laptop Bag</label>
             </value>
             <value>
-                <fullName>Pack of Badges</fullName>
+                <fullName>Mini Speaker</fullName>
                 <default>false</default>
-                <label>Pack of Badges</label>
+                <label>Mini Speaker</label>
+            </value>
+            <value>
+                <fullName>Bottles</fullName>
+                <default>false</default>
+                <label>Bottles</label>
             </value>
         </valueSetDefinition>
     </valueSet>

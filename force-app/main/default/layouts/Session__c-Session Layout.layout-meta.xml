@@ -67,6 +67,10 @@
                 <behavior>Edit</behavior>
                 <field>Hall__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>Type__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>
@@ -87,7 +91,7 @@
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>
-                <field>Schedule_description__c</field>
+                <field>Session_description__c</field>
             </layoutItems>
             <layoutItems>
                 <behavior>Edit</behavior>

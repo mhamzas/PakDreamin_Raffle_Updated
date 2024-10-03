@@ -7,7 +7,6 @@
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
-        <restricted>true</restricted>
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
@@ -39,6 +38,11 @@
                 <fullName>Other</fullName>
                 <default>false</default>
                 <label>Other</label>
+            </value>
+            <value>
+                <fullName>IRIS Hall</fullName>
+                <default>false</default>
+                <label>IRIS Hall</label>
             </value>
         </valueSetDefinition>
     </valueSet>

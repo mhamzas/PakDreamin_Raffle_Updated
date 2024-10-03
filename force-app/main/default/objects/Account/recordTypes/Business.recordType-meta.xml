@@ -27,6 +27,17 @@
         </values>
     </picklistValues>
     <picklistValues>
+        <picklist>Dietary_Requirements__c</picklist>
+        <values>
+            <fullName>Halal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vegan</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
         <picklist>Industry</picklist>
         <values>
             <fullName>Agriculture</fullName>
@@ -188,6 +199,29 @@
         </values>
         <values>
             <fullName>Warm</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>T_Shirt_Size__c</picklist>
+        <values>
+            <fullName>Large</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Small</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XL</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>XXL</fullName>
             <default>false</default>
         </values>
     </picklistValues>
